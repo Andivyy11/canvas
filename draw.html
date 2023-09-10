@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's draw</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="box">
+        <div class="colorplate">
+            <div id="red" ></div>
+            <div id="green" ></div>
+            <div id="blue"></div>
+            <div id="yellow"></div>
+            <div id="orange"></div>
+            <div id="violet"></div>
+            <div id="indigo"></div>
+            <div id="greenyellow"></div>
+            <div id="powderblue"></div>
+            <div id="grey"></div>
+            <div id="brown"></div>
+            <div id="black"></div>
+            <div id="white" style="border:1px solid black;"></div>
+        </div>
+        <div class="toolBox">
+
+            <div onchange="pick()"style="align-content: center;">
+                <span><input type='color' id="clpick"></span>
+                <p>Color Picker</p>
+            </div>
+            
+            <div class="tool">
+                <span><div id="current"></div></span>
+                <p>Brush color</p>
+            </div>
+            <div>
+                    <div onclick="active('brush')" style="width:100%;height:100%;">
+                       <span><img src="icons/paintbrush.png"></span>
+                       <p>Brush</p>
+                    </div>
+                    <div id="drop1" onchange="size('bsize')">
+                       <input type='range' min=1 max=25 id="bsize">
+                       <p>Brush Size</p> 
+                    </div>
+            </div>
+            
+            <div>
+                <div onclick="active('eraser')" style="width:100%;height:100%;">
+                    <span><img src="icons/eraser.png"></span>
+                    <p>Eraser</p>
+                </div>
+                <div id="drop2" onchange="size('esize')">
+                   <input type='range' min=20 max=100 id="esize">
+                   <p>Eraser Size</p>
+                </div>
+            </div>
+            
+            <div onclick="saveImg()">
+                <span><img src="icons/save.png"></span>
+                <p>Save</p>
+            </div>
+            
+            <div onclick="clearCanvas()">
+                <span><img src="icons/broom.png"></span>
+                <p>Clear</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="canvasContainer">
+    <canvas id="canv">
+
+    </canvas>
+    </div>
+
+    <script src="script.js">
+        
+    </script>
+</body>
+</html>
